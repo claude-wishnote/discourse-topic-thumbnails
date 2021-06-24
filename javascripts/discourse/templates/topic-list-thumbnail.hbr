@@ -2,6 +2,25 @@
   {{#if view.hasThumbnail}}
     <div class="topic-list-thumbnail has-thumbnail {{#if view.isLandscape}}landscape{{/if}}">
   {{/if}}
+    <a href="{{view.url}}">
+      {{#if view.hasThumbnail}}
+        <img class="background-thumbnail"
+              src="{{view.fallbackSrc}}"
+              srcset="{{view.srcSet}}"
+              width={{view.width}}
+              height={{view.height}}
+              loading="lazy"
+            />
+        <img class="main-thumbnail"
+              src="{{view.fallbackSrc}}"
+              srcset="{{view.srcSet}}"
+              width={{view.width}}
+              height={{view.height}}
+              loading="lazy"
+            />
+      {{/if}}
+    </a>
+  </div>
   {{#if view.topicThumbnailsService.displayMinimalGrid}}
     <div class="topic-thumbnail-likes">
       {{d-icon "heart"}}
